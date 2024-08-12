@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86c56ebd-1635-44fd-866c-39edf397add7" name="Changes" comment="git settings added">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/blackbox/FilterChallenges.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/blackbox/FilterChallengesTest.kt" afterDir="false" />
+    <list default="true" id="86c56ebd-1635-44fd-866c-39edf397add7" name="Changes" comment="Blackbox: 4 exercises added with its unit tests each">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/personalchallenges/MapsChallenges.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/personalchallenges/MapsChallengesTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -18,6 +18,16 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view />
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -54,10 +64,15 @@
   "keyToString": {
     "Downloaded.Files.Path.Enabled": "false",
     "Gradle.FilterChallengesTest.calculate cart total cost.executor": "Run",
+    "Gradle.FilterChallengesTest.calculate factorial on different scenarios.executor": "Run",
     "Gradle.FilterChallengesTest.executor": "Run",
     "Gradle.FilterChallengesTest.filter and process list happy path.executor": "Run",
     "Gradle.FilterChallengesTest.filter and process list negative numbers.executor": "Run",
     "Gradle.FilterChallengesTest.find the largest word.executor": "Run",
+    "Gradle.MapsChallengesTest.get List Without Max And Min Prices.executor": "Run",
+    "Gradle.MapsChallengesTest.get Max And Min Price negative number must be positive.executor": "Run",
+    "Gradle.MapsChallengesTest.get Max And Min Price.executor": "Run",
+    "Gradle.MapsChallengesTest.get Sum Of Prices.executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
@@ -74,11 +89,12 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="personalchallenges" />
       <recent name="blackbox" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.FilterChallengesTest.find the largest word">
-    <configuration name="FilterChallengesTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.MapsChallengesTest.get Sum Of Prices">
+    <configuration name="FilterChallengesTest.calculate factorial on different scenarios" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -91,7 +107,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;blackbox.FilterChallengesTest&quot;" />
+            <option value="&quot;blackbox.FilterChallengesTest.calculate factorial on different scenarios&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -102,7 +118,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="FilterChallengesTest.calculate cart total cost" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="MapsChallengesTest.get List Without Max And Min Prices" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -115,7 +131,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;blackbox.FilterChallengesTest.calculate cart total cost&quot;" />
+            <option value="&quot;personalchallenges.MapsChallengesTest.get List Without Max And Min Prices&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -126,7 +142,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="FilterChallengesTest.filter and process list happy path" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="MapsChallengesTest.get Max And Min Price negative number must be positive" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -139,7 +155,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;blackbox.FilterChallengesTest.filter and process list happy path&quot;" />
+            <option value="&quot;personalchallenges.MapsChallengesTest.get Max And Min Price negative number must be positive&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -150,7 +166,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="FilterChallengesTest.filter and process list negative numbers" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="MapsChallengesTest.get Max And Min Price" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -163,7 +179,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;blackbox.FilterChallengesTest.filter and process list negative numbers&quot;" />
+            <option value="&quot;personalchallenges.MapsChallengesTest.get Max And Min Price&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -174,7 +190,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="FilterChallengesTest.find the largest word" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="MapsChallengesTest.get Sum Of Prices" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -187,7 +203,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;blackbox.FilterChallengesTest.find the largest word&quot;" />
+            <option value="&quot;personalchallenges.MapsChallengesTest.get Sum Of Prices&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -200,11 +216,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.FilterChallengesTest.find the largest word" />
-        <item itemvalue="Gradle.FilterChallengesTest.calculate cart total cost" />
-        <item itemvalue="Gradle.FilterChallengesTest" />
-        <item itemvalue="Gradle.FilterChallengesTest.filter and process list happy path" />
-        <item itemvalue="Gradle.FilterChallengesTest.filter and process list negative numbers" />
+        <item itemvalue="Gradle.MapsChallengesTest.get Sum Of Prices" />
+        <item itemvalue="Gradle.MapsChallengesTest.get List Without Max And Min Prices" />
+        <item itemvalue="Gradle.MapsChallengesTest.get Max And Min Price negative number must be positive" />
+        <item itemvalue="Gradle.MapsChallengesTest.get Max And Min Price" />
+        <item itemvalue="Gradle.FilterChallengesTest.calculate factorial on different scenarios" />
       </list>
     </recent_temporary>
   </component>
@@ -241,13 +257,22 @@
       <option name="project" value="LOCAL" />
       <updated>1723439408161</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Blackbox: 4 exercises added with its unit tests each">
+      <option name="closed" value="true" />
+      <created>1723441901120</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1723441901120</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First Commit" />
     <MESSAGE value="git settings added" />
-    <option name="LAST_COMMIT_MESSAGE" value="git settings added" />
+    <MESSAGE value="Blackbox: 4 exercises added with its unit tests each" />
+    <option name="LAST_COMMIT_MESSAGE" value="Blackbox: 4 exercises added with its unit tests each" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
