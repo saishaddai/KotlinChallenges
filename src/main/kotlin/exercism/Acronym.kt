@@ -5,9 +5,8 @@ object Acronym {
     fun generate(phrase: String) =
         phrase
             .split("[-_\\s]".toRegex())
-            .map {
-                if ( it.isNotEmpty() ) it[0].uppercaseChar() else ""
-            }
+            .filter { it.isNotEmpty() }
+            .map { it[0].uppercaseChar() }
             .joinToString("")
 
 }
