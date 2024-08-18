@@ -54,5 +54,8 @@ object MapsChallenges {
     /**
      * use flatMap to get a list of Items with the min value of different carts
      */
+    data class Person(val name: String, val friends: List<String>)
+
+    fun getFullListOfPeople(persons: List<Person>) = persons.flatMap { it.friends }
 
 }
