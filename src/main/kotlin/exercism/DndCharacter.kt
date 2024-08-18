@@ -1,7 +1,15 @@
 package com.saishaddai.exercism
 
+import kotlin.math.floor
+import kotlin.random.Random.Default.nextInt
+
 /**
-For a game of Dungeons & Dragons, each player starts by generating a character they can play with. This character has, among other things, six abilities; strength, dexterity, constitution, intelligence, wisdom and charisma. These six abilities have scores that are determined randomly. You do this by rolling four 6-sided dice and recording the sum of the largest three dice. You do this six times, once for each ability.
+For a game of Dungeons & Dragons, each player starts by generating a character
+they can play with. This character has, among other things, six abilities;
+strength, dexterity, constitution, intelligence, wisdom and charisma.
+These six abilities have scores that are determined randomly.
+You do this by rolling four 6-sided dice and recording the sum of the largest three dice.
+You do this six times, once for each ability.
 
 Your character's initial hitpoints are 10 + your character's constitution modifier. You find your character's constitution modifier by subtracting 10 from your character's constitution, divide by 2 and round down.
 
@@ -19,22 +27,38 @@ Because constitution is 3, the constitution modifier is -4 and the hitpoints are
  */
 
 class DndCharacter {
-    val strength: Int = TODO("Initialize value to complete the task")
-    val dexterity: Int = TODO("Initialize value to complete the task")
-    val constitution: Int = TODO("Initialize value to complete the task")
-    val intelligence: Int = TODO("Initialize value to complete the task")
-    val wisdom: Int = TODO("Initialize value to complete the task")
-    val charisma: Int = TODO("Initialize value to complete the task")
-    val hitpoints: Int = TODO("Initialize value to complete the task")
+    val strength: Int = ability()
+    val dexterity: Int = ability()
+    val constitution: Int = ability()
+    val intelligence: Int = ability()
+    val wisdom: Int = ability()
+    val charisma: Int = ability()
+    val hitpoints: Int = modifier(constitution) + 10
 
     companion object {
 
-        fun ability(): Int {
-            TODO("Implement the function to complete the task")
-        }
+        private fun throwDices() =
+            listOf(
+                nextInt(1, 6),
+                nextInt(1, 6),
+                nextInt(1, 6),
+                nextInt(1, 6),
+            )
 
-        fun modifier(score: Int): Int {
-            TODO("Implement the function to complete the task")
-        }
+        private fun List<Int>.discardMinimum() =
+            filter { it != min() }
+
+        private fun Int.constitutionModifier() =
+            floor((this.toDouble() - 10) / 2).toInt()
+
+        fun ability() =
+            throwDices()
+                .discardMinimum()
+                .sum()
+
+        fun modifier(score: Int) =
+            score
+                .constitutionModifier()
+
     }
 }
