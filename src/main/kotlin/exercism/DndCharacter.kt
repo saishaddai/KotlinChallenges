@@ -37,28 +37,13 @@ class DndCharacter {
 
     companion object {
 
-        private fun throwDices() =
-            listOf(
-                nextInt(1, 6),
-                nextInt(1, 6),
-                nextInt(1, 6),
-                nextInt(1, 6),
-            )
+        private fun throwDices() = List(4) { nextInt(1,6) }
+        private fun Int.constitutionModifier() = floor((this.toDouble() - 10) / 2).toInt()
+        private fun List<Int>.discardMinimum() = filter { it != min() }
 
-        private fun List<Int>.discardMinimum() =
-            filter { it != min() }
+        fun ability() = throwDices().discardMinimum().sum()
 
-        private fun Int.constitutionModifier() =
-            floor((this.toDouble() - 10) / 2).toInt()
-
-        fun ability() =
-            throwDices()
-                .discardMinimum()
-                .sum()
-
-        fun modifier(score: Int) =
-            score
-                .constitutionModifier()
+        fun modifier(score: Int) = score.constitutionModifier()
 
     }
 }
