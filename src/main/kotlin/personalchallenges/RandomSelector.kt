@@ -64,6 +64,26 @@ class RandomSelector {
     fun getNumberOfPicks(diceValue : Int, size : Int, sum: Int) =
         Math.round(((diceValue * size ) / sum).toDouble()).toInt()
 
+    fun compensateValues(map: MutableMap<String, Int>, size: Int) : MutableMap<String, Int> {
+        //get sum of all the values of the map -> sumValues
+        val sum = map.values.sum()
+        //get distance between sumValues and size -> alpha
+        val alpha = size - sum
+        if (alpha == 0) {
+            return map
+        } else {
+            //get the minimum map entry with minimum value and add the alpha to it.
+            val minValue = map.values.min()
+            val key = map.filterValues { it == minValue }.keys.firstOrNull()
+            key?.let {
+                val newValue = map[key]?.plus(alpha)
+                newValue?.let {
+                    map[key] = it
+                }
+            }
+        }
+        return map
+    }
 
     private fun <E> List<E>.getNumberOfPicksPerFile(): Map<Item, E> {
 //        * File1, 3 lines to retrieve
