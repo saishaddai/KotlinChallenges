@@ -57,5 +57,16 @@ class RandomSelectorTest {
         assertEquals(result.size, 0)
     }
 
+    @Test
+    fun `get number of picks with valid numbers`() {
+        val result1 = RandomSelector().getNumberOfPicks(1, 20, 7)
+        assertTrue( result1 <= 20)
+        val result6 = RandomSelector().getNumberOfPicks(6, 20, 7)
+        println("$result1 and $result6")
+        assertTrue( result6 <= 20)
+        assertTrue(result1 < result6)
+        assertTrue( result1 + result6 <= 20)
+    }
+
 
 }

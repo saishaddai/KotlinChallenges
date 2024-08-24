@@ -34,19 +34,46 @@ class RandomSelector {
     fun getSelections(size: Int, list: List<Item>) : List<Selection>{
         if(size <= 0) return emptyList()
 
-//        val priorities : Map<Item, Int> = throwDices().getNumberOfPicksPerFile()
+//        val priorities : Map<Item, Int> =
+//            throwDices(list.size)
+//            .getNumberOfPicksPerFile()
+
 //        priorities.forEach{priority ->
 //            priority.key.
 //        }
         return emptyList()
     }
 
-    /**
-     * This is a race of each file and who has a bigger number
-     */
     fun throwDices(dices : Int) : List<Int> {
         val validDices : Int = if(dices < 0) 0 else dices
         return List(validDices) { nextInt(1, 6) }
     }
 
+    fun getPriorityMap(diceValues : List<Int>) {
+        //get sum of all the values in the dices
+        //iterate the list
+        //for each dice item, get its value with the following formula
+        //numberOfPicks =  round( (itemvalue * size ) / sum)
+        //with this value set an entry of the map: Filename to numberOfPicks
+//        6+5 = 11 = 100%
+//        6 -> (6*20)/11 = 10.9
+//        5 -> (5*20)/11 = 9.09
+
+    }
+
+    fun getNumberOfPicks(diceValue : Int, size : Int, sum: Int) =
+        Math.round(((diceValue * size ) / sum).toDouble()).toInt()
+
+
+    private fun <E> List<E>.getNumberOfPicksPerFile(): Map<Item, E> {
+//        * File1, 3 lines to retrieve
+//        * File2, 4 lines to retrieve
+//        * File3, 2 lines to retrieve
+//        * File4, 1 line to retrieve
+        //
+        return mapOf()
+    }
+
 }
+
+
