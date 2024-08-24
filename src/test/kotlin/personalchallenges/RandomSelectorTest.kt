@@ -1,6 +1,7 @@
 package personalchallenges
 
 import com.saishaddai.personalchallenges.RandomSelector
+import com.saishaddai.personalchallenges.RandomSelector.Item
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
@@ -9,11 +10,11 @@ import kotlin.test.assertTrue
 class RandomSelectorTest {
 
     private val listOfItems = listOf(
-        RandomSelector.Item("N.Y. Tonight", 300),
-        RandomSelector.Item("What a life", 34),
-        RandomSelector.Item("Titanic", 165),
-        RandomSelector.Item("Purple Rain", 40),
-        RandomSelector.Item("L.A. Writer", 5)
+        Item("N.Y. Tonight", 300),
+        Item("What a life", 34),
+        Item("Titanic", 165),
+        Item("Purple Rain", 40),
+        Item("L.A. Writer", 5)
         )
 
     //@Test
@@ -99,6 +100,14 @@ class RandomSelectorTest {
         assertEquals(map["Title 2"],  5)
         assertEquals(map["Title 3"],  7)
         assertEquals(map["Title 4"],  3)
+    }
+
+    @Test
+    fun `item to selection with valid numbers`() {
+        val item = Item("N.Y. Tonight", 300)
+        val result = RandomSelector().itemToSelection(item, 16)
+        assertEquals(result.questionLines.size, 16)
+        println(result.questionLines)
     }
 
 

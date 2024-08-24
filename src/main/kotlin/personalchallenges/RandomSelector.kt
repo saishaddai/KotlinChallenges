@@ -1,6 +1,5 @@
 package com.saishaddai.personalchallenges
 
-import kotlin.random.Random
 import kotlin.random.Random.Default.nextInt
 
 /**
@@ -49,17 +48,17 @@ class RandomSelector {
         return List(validDices) { nextInt(1, 6) }
     }
 
-    fun getPriorityMap(diceValues : List<Int>) {
+   // fun getPriorityMap(diceValues : List<Int>) {
         //get sum of all the values in the dices
         //iterate the list
         //for each dice item, get its value with the following formula
-        //numberOfPicks =  round( (itemvalue * size ) / sum)
+        //numberOfPicks =  round( (itemValue * size ) / sum)
         //with this value set an entry of the map: Filename to numberOfPicks
 //        6+5 = 11 = 100%
 //        6 -> (6*20)/11 = 10.9
 //        5 -> (5*20)/11 = 9.09
 
-    }
+   // }
 
     fun getNumberOfPicks(diceValue : Int, size : Int, sum: Int) =
         Math.round(((diceValue * size ) / sum).toDouble()).toInt()
@@ -85,13 +84,12 @@ class RandomSelector {
         return map
     }
 
-    private fun <E> List<E>.getNumberOfPicksPerFile(): Map<Item, E> {
-//        * File1, 3 lines to retrieve
-//        * File2, 4 lines to retrieve
-//        * File3, 2 lines to retrieve
-//        * File4, 1 line to retrieve
-        //
-        return mapOf()
+    fun itemToSelection(item: Item, picks: Int): Selection {
+        val selectedLines = mutableListOf<Int>()
+        repeat(picks) {
+            selectedLines.add(nextInt(item.totalLines))
+        }
+        return Selection(item.fileName, selectedLines)
     }
 
 }
