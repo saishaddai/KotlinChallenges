@@ -69,4 +69,37 @@ class RandomSelectorTest {
     }
 
 
+    @Test
+    fun `compensate with valid numbers wont compensate`() {
+        val map = mutableMapOf(
+            "Title 1" to 3,
+            "Title 2" to 5,
+            "Title 3" to 8,
+            "Title 4" to 4
+        )
+        RandomSelector().compensateValues(map, 20)
+        assertEquals(map.values.sum(), 20)
+        assertEquals(map["Title 1"],  3)
+        assertEquals(map["Title 2"],  5)
+        assertEquals(map["Title 3"],  8)
+        assertEquals(map["Title 4"],  4)
+    }
+
+    @Test
+    fun `compensate with valid numbers`() {
+        val map = mutableMapOf(
+            "Title 1" to 3,
+            "Title 2" to 5,
+            "Title 3" to 7,
+            "Title 4" to 3
+        )
+        RandomSelector().compensateValues(map, 20)
+        assertEquals(map.values.sum(), 20)
+        assertEquals(map["Title 1"],  5)
+        assertEquals(map["Title 2"],  5)
+        assertEquals(map["Title 3"],  7)
+        assertEquals(map["Title 4"],  3)
+    }
+
+
 }
