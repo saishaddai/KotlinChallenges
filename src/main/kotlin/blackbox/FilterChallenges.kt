@@ -56,4 +56,29 @@ object FilterChallenges {
             .reduce{ acc, current -> acc * current }
 
 
+    private const val VOWELS = "aeiou"
+    /**
+     * Remove Vowels of any given string
+     */
+    fun removeVowels(input: String) =
+        input.filter { character -> !VOWELS.contains(character) }
+
+
+    /**
+     * sum even numbers from a list of integers
+     */
+    fun sumEvenNumbers(numbers: List<Int>) =
+        numbers.filter { number -> number % 2 == 0 }.sum()
+
+
+    /**
+     * Write a Kotlin function that takes a map of strings to integers as an
+     * input and returns a new map with only the entries where the value is
+     * greater than 10.
+     * Input: {"a" to 5, "b" to 15, "c" to 20, "d" to 5}
+     * Output: {"b" to 15, "c" to 20}
+     */
+    fun filterMap(input: Map<String, Int>) =
+        input.filter { entry -> entry.value > 10 }
+
 }
