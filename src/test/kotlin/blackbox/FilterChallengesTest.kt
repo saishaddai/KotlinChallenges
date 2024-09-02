@@ -4,9 +4,13 @@ import com.saishaddai.blackbox.FilterChallenges
 import com.saishaddai.blackbox.FilterChallenges.filterAndProcessList
 import com.saishaddai.blackbox.FilterChallenges.calculateCartTotalCost
 import com.saishaddai.blackbox.FilterChallenges.calculateFactorial
+import com.saishaddai.blackbox.FilterChallenges.filterMap
 import com.saishaddai.blackbox.FilterChallenges.findLongestWord
+import com.saishaddai.blackbox.FilterChallenges.removeVowels
+import com.saishaddai.blackbox.FilterChallenges.sumEvenNumbers
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertTrue
 
 class FilterChallengesTest {
 
@@ -65,6 +69,66 @@ class FilterChallengesTest {
 
 
 
+    }
+
+    @Test
+    fun `remove Vowels empty string returns empty`() {
+        val result = removeVowels("")
+        assertTrue(result.isEmpty())
+    }
+
+    @Test
+    fun `remove Vowels valid string returns no vowels`() {
+        val result = removeVowels("hello world")
+        assertEquals("hll wrld", result)
+    }
+
+    @Test
+    fun `remove Vowels string with no vowels returns input`() {
+        val result = removeVowels("sdfghjkl")
+        assertEquals("sdfghjkl", result)
+    }
+
+
+    @Test
+    fun `sum Even Numbers with empty list returns zero`() {
+        val result = sumEvenNumbers(listOf())
+        assertEquals(0, result)
+    }
+
+    @Test
+    fun `sum Even Numbers with list with no even numbers return zero`() {
+        val numbers = listOf(1, 3, 5, 7, 9)
+        val result = sumEvenNumbers(numbers)
+        assertEquals(0, result)
+    }
+
+    @Test
+    fun `sum Even Numbers with valid list return the sum`() {
+        val numbers = listOf(22, 43, 55, 72, 99)
+        val result = sumEvenNumbers(numbers)
+        assertEquals(94, result)
+    }
+
+    @Test
+    fun `filter map with empty map returns empty map`() {
+        val result = filterMap(emptyMap())
+        assertTrue(result.isEmpty())
+    }
+
+    @Test
+    fun `filter map with valid map with no valid entries returns empty map`() {
+        val inputMap = mapOf("a" to 5, "b" to 5, "c" to 0, "d" to 9)
+        val result = filterMap(inputMap)
+        assertTrue(result.isEmpty())
+    }
+
+    @Test
+    fun `filter map with valid map returns valid map`() {
+        val inputMap = mapOf("a" to 5, "b" to 15, "c" to 20, "d" to 5)
+        val expected = mapOf("b" to 15, "c" to 20)
+        val result = filterMap(inputMap)
+        assertEquals(expected, result)
     }
 
 
