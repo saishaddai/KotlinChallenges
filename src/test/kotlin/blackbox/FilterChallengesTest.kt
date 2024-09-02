@@ -6,6 +6,7 @@ import com.saishaddai.blackbox.FilterChallenges.calculateCartTotalCost
 import com.saishaddai.blackbox.FilterChallenges.calculateFactorial
 import com.saishaddai.blackbox.FilterChallenges.filterMap
 import com.saishaddai.blackbox.FilterChallenges.findLongestWord
+import com.saishaddai.blackbox.FilterChallenges.getMin
 import com.saishaddai.blackbox.FilterChallenges.removeVowels
 import com.saishaddai.blackbox.FilterChallenges.sumEvenNumbers
 import org.junit.jupiter.api.Test
@@ -131,6 +132,23 @@ class FilterChallengesTest {
         assertEquals(expected, result)
     }
 
+    @Test
+    fun `get min from a empty map should return zero`() {
+        val input : Map<String, List<Int>> = mapOf()
+        val result = getMin(input)
+        assertEquals(0, result)
+    }
+
+    @Test
+    fun `get min from a valid map should return the minimum`() {
+        val input = mapOf(
+            "dog" to listOf(1, 2, 3, 4, 6),
+            "hello" to listOf(5, -6, 7, 8, 9),
+            "really" to listOf(4, 7, 33, 56)
+        )
+        val result = getMin(input)
+        assertEquals(-6, result)
+    }
 
 
 

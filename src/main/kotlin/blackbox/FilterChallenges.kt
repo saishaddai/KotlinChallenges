@@ -81,4 +81,14 @@ object FilterChallenges {
     fun filterMap(input: Map<String, Int>) =
         input.filter { entry -> entry.value > 10 }
 
+
+    /**
+     * Create a method that takes all the values of a map,
+     * The values are list on integers, and you must take the minimum of all the lists together
+     */
+    fun getMin(input: Map<String, List<Int>>) =
+        input.values
+            .flatten()
+            .minOrNull() ?: 0
+
 }
