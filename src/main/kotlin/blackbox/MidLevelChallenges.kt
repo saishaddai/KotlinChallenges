@@ -22,7 +22,6 @@ object MidLevelChallenges {
      * The input list may contain only one element, in which case the function should return an empty list.
      *
      */
-
     fun findClosestPair(numbers: List<Int>) : List<Int> {
         if(numbers.isEmpty() || numbers.size == 1) return listOf()
         var minDistance = Int.MAX_VALUE
@@ -32,7 +31,6 @@ object MidLevelChallenges {
         for(i in 0 until sorted.size - 1) {
             if (sorted[i] != sorted[i+1]) {
                 val diff = abs(sorted[i+1] - sorted[i])
-                println("values ${sorted[i]} and ${sorted[i+1]} + diff $diff ")
                 if(minDistance > diff) {
                     minDistance = diff
                     minList = listOf(sorted[i] , sorted[i+1])
