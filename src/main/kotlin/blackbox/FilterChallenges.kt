@@ -12,15 +12,7 @@ object FilterChallenges {
      * @param list a list of numbers
      * @return a list of even numbers multiplied by two
      */
-    fun filterAndProcessList(list: List<Int>) : List<Int>{
-        val evens = list.filter{i ->
-            i % 2 == 0}
-
-        val evensDoubles = evens.map{i ->
-            i * 2}
-
-        return evensDoubles
-    }
+    fun filterAndProcessList(list: List<Int>) = list.filter { it % 2 == 0 }.map { it * 2 }
 
     /**
       Exercise: Calculate the total cost of a shopping cart
