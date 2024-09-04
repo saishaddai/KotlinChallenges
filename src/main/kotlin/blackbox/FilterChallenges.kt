@@ -83,4 +83,34 @@ object FilterChallenges {
             .flatten()
             .minOrNull() ?: 0
 
+
+    /**
+     * Given a list of numbers, get a new one where each entry is the sum of other entries of the original input
+     */
+    fun sumEntries(numbers: List<Int>) : List<Int>{
+        val sum = numbers.sum()
+        return numbers.map { number ->
+            number * (sum - number)
+        }
+    }
+
+    fun findLongestCommonPrefix(words: List<String>) : String {
+        return when(words.size) {
+            0 -> ""
+            1 -> words.single()
+            else -> findLongestPrefix(words)
+        }
+    }
+
+    private fun findLongestPrefix(words: List<String>) : String {
+        val prefixes = mutableListOf<String>()
+        for( i in 0 until words.size - 1) {
+            val currentPrefix = words[i].zip(words[i + 1])
+                .takeWhile { pair -> pair.first == pair.second }
+                .map { it.first }
+                .joinToString("")
+            prefixes.add(currentPrefix)
+        }
+        return prefixes.min()
+    }
 }

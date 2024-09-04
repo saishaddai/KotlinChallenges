@@ -1,16 +1,19 @@
 package blackbox
 
 import com.saishaddai.blackbox.FilterChallenges
-import com.saishaddai.blackbox.FilterChallenges.filterAndProcessList
 import com.saishaddai.blackbox.FilterChallenges.calculateCartTotalCost
 import com.saishaddai.blackbox.FilterChallenges.calculateFactorial
+import com.saishaddai.blackbox.FilterChallenges.filterAndProcessList
 import com.saishaddai.blackbox.FilterChallenges.filterMap
+import com.saishaddai.blackbox.FilterChallenges.findLongestCommonPrefix
 import com.saishaddai.blackbox.FilterChallenges.findLongestWord
 import com.saishaddai.blackbox.FilterChallenges.getMin
 import com.saishaddai.blackbox.FilterChallenges.removeVowels
+import com.saishaddai.blackbox.FilterChallenges.sumEntries
 import com.saishaddai.blackbox.FilterChallenges.sumEvenNumbers
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertNotNull
 import kotlin.test.assertTrue
 
 class FilterChallengesTest {
@@ -148,6 +151,49 @@ class FilterChallengesTest {
         )
         val result = getMin(input)
         assertEquals(-6, result)
+    }
+
+    @Test
+    fun `get sum of empty list returns an empty list`() {
+        val result = sumEntries(listOf())
+        assertNotNull(result)
+        assertTrue(result.isEmpty())
+    }
+
+    @Test
+    fun `get sum of valid list returns an list with sae number of elements and right calculated`() {
+        val numbers = listOf(1, 2, 3, 5, 8)
+        val expected = listOf(18*1, 17*2, 16*3, 14*5, 11*8)
+        val result = sumEntries(numbers)
+        assertNotNull(result)
+        assertEquals(result.size, numbers.size)
+        assertEquals(expected, result)
+    }
+
+
+    @Test
+    fun `get longest prefix of empty list must be a empty string`() {
+        val result = findLongestCommonPrefix(listOf())
+        assertNotNull(result)
+        assertTrue(result.isEmpty())
+    }
+
+    @Test
+    fun `get longest prefix of a list with one element returns the whole string`() {
+        val words = listOf("flower")
+        val expected = "flower"
+        val result = findLongestCommonPrefix(words)
+        assertNotNull(result)
+        assertEquals(expected, result)
+    }
+
+    @Test
+    fun `get longest prefix of valid list returns the right result`() {
+        val words = listOf("flower", "flow", "flock")
+        val expected = "flo"
+        val result = findLongestCommonPrefix(words)
+        assertNotNull(result)
+        assertEquals(expected, result)
     }
 
 
