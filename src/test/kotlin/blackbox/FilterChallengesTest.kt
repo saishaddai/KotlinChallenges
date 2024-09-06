@@ -8,9 +8,11 @@ import com.saishaddai.blackbox.FilterChallenges.filterMap
 import com.saishaddai.blackbox.FilterChallenges.findLongestCommonPrefix
 import com.saishaddai.blackbox.FilterChallenges.findLongestWord
 import com.saishaddai.blackbox.FilterChallenges.getMin
+import com.saishaddai.blackbox.FilterChallenges.isValidParentheses
 import com.saishaddai.blackbox.FilterChallenges.removeVowels
 import com.saishaddai.blackbox.FilterChallenges.sumEntries
 import com.saishaddai.blackbox.FilterChallenges.sumEvenNumbers
+import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
@@ -196,6 +198,15 @@ class FilterChallengesTest {
         assertEquals(expected, result)
     }
 
+    @Test
+    fun `is valid parentheses different scenarios`() {
+        assertTrue(isValidParentheses("()"))
+        assertTrue(isValidParentheses("()()"))
+        assertTrue(isValidParentheses("(())"))
+        assertFalse(isValidParentheses(")("))
+        assertFalse(isValidParentheses("((("))
+        assertFalse(isValidParentheses(")()("))
+    }
 
 
 }

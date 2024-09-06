@@ -113,4 +113,32 @@ object FilterChallenges {
         }
         return prefixes.min()
     }
+
+
+    /**
+     * Challenge: Write a function isValidParentheses that takes a
+     * string of parentheses as input and returns true if the parentheses are balanced and false otherwise.
+     *
+     * Constraints:
+     *
+     * The input string only contains parentheses characters ( and ).
+     * The input string is not null or empty.
+     */
+    fun isValidParentheses(input: String) : Boolean {
+        var count = 0
+        input.forEach { character ->
+            when (character) {
+                '(' -> count++
+                ')' -> count--
+                else -> {}
+            }
+            if(count < 0)
+                return false
+        }
+
+        return count == 0
+    }
+
+
+
 }
