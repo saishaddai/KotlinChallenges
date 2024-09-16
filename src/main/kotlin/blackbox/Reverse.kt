@@ -3,12 +3,12 @@ package com.saishaddai.blackbox
 class Reverse {
 
     fun reverseString(input: String): String {
-        var result = ""
+        val result = StringBuilder()
         input.forEach {
-            result = it + result
-        }.toString()
+            result.insert(0, it)
+        }
 
-        return result
+        return result.toString()
     }
 
 }
