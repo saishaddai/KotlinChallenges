@@ -23,11 +23,12 @@ object RepeatedElements {
      * @return the duplicated number or -1 of not duplicated found
      */
     fun findFirstDuplicate(numbers: List<Int>?) : Int {
-        val seenNumbers = mutableMapOf<Int, Boolean>()
+        val seenNumbers = mutableSetOf<Int>()
         numbers?.forEach { number ->
-            seenNumbers[number]?.let { return number }
-            seenNumbers[number] = true
+            if (number in seenNumbers) return number
+            seenNumbers.add(number)
         }
         return -1
     }
+
 }
