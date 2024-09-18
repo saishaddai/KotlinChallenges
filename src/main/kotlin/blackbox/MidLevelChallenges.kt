@@ -39,4 +39,21 @@ object MidLevelChallenges {
         }
         return minList
     }
+
+
+    fun findClosestPair2(numbers: List<Int>) : Pair<Int, Int>? {
+        if (numbers.size == 1 || numbers.isEmpty()) return null
+        var minDiff = Int.MAX_VALUE
+        var closestPair = Pair(0, 0)
+        val sortedList = numbers.sorted()
+        for (i in 0 until sortedList.size - 1) {
+            val diff = abs(sortedList[i] - sortedList[i+1])
+            if (diff < minDiff) {
+                minDiff = diff
+                closestPair =  sortedList[i] to sortedList[i+1]
+            }
+        }
+        return if (minDiff == Int.MAX_VALUE) null else closestPair
+    }
+
 }
