@@ -2,6 +2,7 @@ package blackbox
 
 import com.saishaddai.blackbox.MidLevelChallenges.findClosestPair
 import com.saishaddai.blackbox.MidLevelChallenges.findClosestPair2
+import com.saishaddai.blackbox.MidLevelChallenges.maxProductSubArray
 import org.junit.jupiter.api.Test
 
 import org.junit.jupiter.api.Assertions.*
@@ -62,4 +63,40 @@ class MidLevelChallengesTest {
         assertNotNull(result)
         assertEquals(expected, result)
     }
+
+    @Test
+    fun `get max product Sub array from an empty list`() {
+        val result =  maxProductSubArray(listOf<Int>())
+        assertEquals(0, result)
+    }
+
+    @Test
+    fun `get max product Sub array from a all positives list`() {
+        val result =  maxProductSubArray(listOf<Int>(1, 2, 3, 4, 5, 6, 7, 8))
+        val expected  = 40320
+        assertEquals(expected, result)
+    }
+
+    @Test
+    fun `get max product Sub array from a list with a zero must ignore zero`() {
+        val result =  maxProductSubArray(listOf<Int>(1, 2, 3, 4, 0, 5, 6, 7, 8))
+        val expected  = 40320
+        assertEquals(expected, result)
+    }
+
+    @Test
+    fun `get max product Sub array from a list with an even combination of negative numbers`() {
+        val result =  maxProductSubArray(listOf<Int>(1, -2, 3, 4, 0, -5, 6, 7, 8))
+        val expected  = 40320
+        assertEquals(expected, result)
+    }
+
+    @Test
+    fun `get max product Sub array from a list with an odd combination of negative numbers`() {
+        val result =  maxProductSubArray(listOf<Int>(1, -4, -2, -3, 0, 5, 6, 7, 8)) //1, -4, -3, 5, 6, 7, 8
+        val expected  = 20160
+        assertEquals(expected, result)
+    }
+
+
 }
