@@ -56,4 +56,19 @@ object MidLevelChallenges {
         return if (minDiff == Int.MAX_VALUE) null else closestPair
     }
 
+    fun maxProductSubArray(numbers: List<Int>): Int {
+        if (numbers.isEmpty()) return 0
+        val biggestNegative = numbers.filter { it < 0 }.maxOrNull() ?: 1
+        var result = numbers.reduce { acc, number ->
+            if (number != 0 )
+                acc * number
+            else
+                acc
+        }
+        if(result < 0) {
+            return result / biggestNegative
+        }
+        return result
+    }
+
 }
