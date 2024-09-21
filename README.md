@@ -16,7 +16,8 @@ The project includes solutions to challenges from various sources, including:
 
 * Exercism
 * Blackbox.ai
-* Personal challenges 
+* Personal challenges
+* Functional Challenges
 
 ## Features
 ------------
