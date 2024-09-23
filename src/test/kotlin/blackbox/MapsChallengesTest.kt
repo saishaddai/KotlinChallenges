@@ -1,11 +1,13 @@
 package blackbox
 
 import com.saishaddai.blackbox.MapsChallenges
+import com.saishaddai.blackbox.MapsChallenges.Product
 import com.saishaddai.blackbox.MapsChallenges.Purchase
 import com.saishaddai.blackbox.MapsChallenges.Student
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
+import kotlin.test.assertNull
 
 class MapsChallengesTest {
 
@@ -61,6 +63,23 @@ class MapsChallengesTest {
 
         val result = MapsChallenges().calculateTotalCostByCategory(cart)
 
+        assertEquals(expectedOutput, result)
+
+    }
+
+    @Test
+    fun `test find most expensive product`() {
+
+        var products = listOf<Product>()
+        var result = MapsChallenges().findMostExpensiveProduct(products)
+        assertNull(result)
+
+        products = listOf(Product("Apple", 10.0),
+            Product("Banana", 5.0),
+            Product("Orange", 15.0))
+
+        val expectedOutput = Product("Orange", 15.0)
+        result = MapsChallenges().findMostExpensiveProduct(products)
         assertEquals(expectedOutput, result)
 
     }

@@ -17,4 +17,7 @@ class MapsChallenges {
             }.toMap()
     }
 
+    data class Product(val name: String, val price: Double)
+    fun findMostExpensiveProduct(products: List<Product>) : Product? = products.maxByOrNull { it.price }
+
 }
