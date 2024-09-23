@@ -1,6 +1,7 @@
 package blackbox
 
 import com.saishaddai.blackbox.MapsChallenges
+import com.saishaddai.blackbox.MapsChallenges.Purchase
 import com.saishaddai.blackbox.MapsChallenges.Student
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -40,4 +41,28 @@ class MapsChallengesTest {
         assertEquals(expectedOutput, result)
 
     }
+
+
+    @Test
+    fun `test calculate total cost by category`() {
+        val cart = listOf(
+            Purchase("Food", 10.0),
+            Purchase("Electronics", 50.0),
+            Purchase("Food", 20.0),
+            Purchase("Clothing", 30.0),
+            Purchase("Electronics", 40.0)
+        )
+
+        val expectedOutput = mapOf(
+            "Food" to 30.0,
+            "Electronics" to 90.0,
+            "Clothing" to 30.0
+        )
+
+        val result = MapsChallenges().calculateTotalCostByCategory(cart)
+
+        assertEquals(expectedOutput, result)
+
+    }
+
 }
