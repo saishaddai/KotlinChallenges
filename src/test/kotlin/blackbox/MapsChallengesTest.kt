@@ -21,7 +21,7 @@ class MapsChallengesTest {
 
     @Test
     fun `test group students`() {
-        val students = mutableListOf(
+        val students = listOf(
             Student("Alice", 90),
             Student("Bob", 80),
             Student("Charlie", 90),
@@ -29,10 +29,10 @@ class MapsChallengesTest {
             Student("Eve", 80)
         )
 
-        val expectedOutput = mutableMapOf<Int, MutableList<Student>>(
-            90 to mutableListOf(Student("Alice", 90), Student("Charlie", 90)),
-            80 to mutableListOf(Student("Bob", 80), Student("Eve", 80)),
-            70 to mutableListOf(Student("David", 70))
+        val expectedOutput = mapOf<Int, List<Student>>(
+            90 to listOf(Student("Alice", 90), Student("Charlie", 90)),
+            80 to listOf(Student("Bob", 80), Student("Eve", 80)),
+            70 to listOf(Student("David", 70))
         )
 
         val result = MapsChallenges().groupStudentsByGrade(students)
