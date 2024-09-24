@@ -20,4 +20,17 @@ class MapsChallenges {
     data class Product(val name: String, val price: Double)
     fun findMostExpensiveProduct(products: List<Product>) : Product? = products.maxByOrNull { it.price }
 
+    fun countPairsWithDifference(numbers: List<Int>, k: Int): Int {
+        if (numbers.isEmpty()) return 0
+        val freqMap = numbers.groupBy { it }.mapValues { it.value.size }
+        var pairsWithDifference = 0
+        for ((num, freq) in freqMap) {
+            val targetNum = num + k
+            if (freqMap.containsKey(targetNum)) {
+                pairsWithDifference += freq * freqMap[targetNum]!!
+            }
+        }
+        return pairsWithDifference
+    }
+
 }

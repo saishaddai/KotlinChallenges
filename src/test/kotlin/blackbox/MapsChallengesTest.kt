@@ -84,4 +84,22 @@ class MapsChallengesTest {
 
     }
 
+    @Test
+    fun `find pair with difference k`() {
+        var inputList = listOf<Int>()
+        var k = 10
+        var result = 0
+        assertEquals(0, result)
+
+        inputList = listOf<Int>(1, 2, 3, 4, 5)
+        k = 1
+        result = MapsChallenges().countPairsWithDifference(inputList, k)
+        assertEquals(4, result)
+
+        k = 2
+        result = MapsChallenges().countPairsWithDifference(inputList, k)
+        assertEquals(3, result)
+
+    }
+
 }
